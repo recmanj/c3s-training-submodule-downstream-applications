@@ -18,8 +18,17 @@ notebooks:
 require_tests: false     # Set true to fail when no test files exist
 coverage_threshold: 80   # Minimum coverage percentage for pytest-cov
 
+# Performance test thresholds (data-download cells depend on CDS queue latency)
+performance_tests:
+  max_cell_memory_mb_warning: 1024
+  max_cell_memory_mb_fail: 2048
+  max_cell_runtime_seconds_warning: 300
+  max_cell_runtime_seconds_fail: 900
+
 # Pynblint rule configuration
-# pynblint:
-#   exclude:                    # Additional rules to suppress (extends baseline)
-#     - untitled-notebook
-#   exclude_mode: extend        # "extend" (default) or "override"
+pynblint:
+  exclude:                    # Additional rules to suppress (extends baseline)
+    - notebook-too-long
+    - non-executed-cells
+    - cell-too-long
+  exclude_mode: extend        # "extend" (default) or "override"

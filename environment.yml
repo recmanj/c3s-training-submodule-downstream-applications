@@ -1,8 +1,10 @@
 dependencies:
   - cdsapi
   - numpy
+  - pandas
   - netCDF4
   - xarray
+  - dask
   - matplotlib
   - cartopy
   - jupyterlab-myst
